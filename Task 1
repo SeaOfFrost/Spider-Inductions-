@@ -37,7 +37,7 @@ int main (void)
   int Released_Confidence_Level[2];
 
   //Initialization of ports for buttons and LEDs
-  DDRB = 0b00011111; //First three pins of port B are output
+  DDRB = 0b00001111; //First three pins of port B are output
   PORTB = 0b00000000; //All the pins are set low
   DDRD = 0x00; //Setting all the pins as input pins (I'll only be using the last two pins though)
   PORTD = 0b11000000; //Setting the last two pins high for (the buttons)
@@ -80,7 +80,6 @@ int main (void)
                           if(Pressed == 0)
                           {
                             b_count++;                          //Increase count (upto 6)
-                            PORTB ^= 0b00010000;
                             Pressed = 1;
                           }
                          Pressed_Confidence_Level[1] = 0; 
